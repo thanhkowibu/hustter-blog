@@ -36,7 +36,8 @@ export const getRelatedPosts = async (req, res) => {
   const { category } = req.query;
   const q = `SELECT * FROM posts
   WHERE id != $1
-  ORDER BY CASE WHEN category = $2 THEN 0 ELSE 1 END, category`;
+  ORDER BY CASE WHEN category = $2 THEN 0 ELSE 1 END, category
+  LIMIT 8`;
 
   try {
     const data = await db.query(q, [id, category]);
