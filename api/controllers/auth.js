@@ -39,7 +39,15 @@ export const login = async (req, res) => {
     const token = jwt.sign({ id: data.rows[0].id }, process.env.JWT_KEY);
     const { password, ...otherInformation } = data.rows[0]; // Exclude password from data to pass to json
 
-    return res.cookie("access_token", token).status(200).json(otherInformation);
+    return res
+      .cookie("access_token", token, {
+        httpOnly: true, // The cookie is only accessible by the web server
+        secure: true, // The cookie can only be transmitted over https
+        sameSite: "none", // The cookie will only be sent if the request is being made to the same site
+        maxAge: 3600000, // The cookie will expire after 1 hour (3600000 milliseconds)
+      })
+      .status(200)
+      .json(otherInformation);
 
     // return res.status(200).json("Login successfully");
   } catch (err) {
