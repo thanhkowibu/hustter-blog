@@ -1,2 +1,3 @@
-# hustter-blog-web
+# Hustter
+
 A blog website for Huster students
