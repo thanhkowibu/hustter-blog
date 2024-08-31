@@ -20,33 +20,43 @@ To run the project, follow these steps:
 1. **Clone the repository:**
 
 ```
-git clone https://github.com/thanhkowibu/hustter-blog.git cd hustter-blog
+git clone https://github.com/thanhkowibu/hustter-blog.git
+cd hustter-blog
 ```
 
 
 2. **Install dependencies:**
 
 - For the client:
-  ```
-  cd client
-  npm install
-  ```
+```
+cd client
+npm install
+```
 
 - For the server:
-  ```
-  cd server
-  npm install
-  ```
+```
+cd api
+npm install
+```
+
 
 3. **Configure environment variables:**
 
-- Create a `.env` file in the server directory with the following content:
+- Create a `.env` file in the `api` directory with the following content:
+```
+PORT=5000
+CLIENT_URL=http://localhost:5173
+CONNECTION_STRING=your_postgresql_database_url
+JWT_KEY_ACCESS=your_jwt_key
+CLOUDINARY_CLOUD_NAME=your_cloudinary_cloud_name
+CLOUDINARY_API_KEY=your_cloudinary_api_key
+CLOUDINARY_SECRET_KEY=your_cloudinary_secret_key
+```
 
-  ```
-  PORT=5000
-  DATABASE_URL=your_postgresql_database_url
-  CLOUDINARY_URL=your_cloudinary_url
-  ```
+- Create a `.env` file in the `client` directory with the following content:
+```
+VITE_BASE_URL=http://localhost:5000
+```
 
 4. **Run the development servers:**
 
