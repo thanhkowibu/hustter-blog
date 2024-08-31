@@ -62,7 +62,7 @@ git clone https://github.com/thanhkowibu/hustter-blog.git cd hustter-blog
 
 5. **Access the application:**
 
-Open your browser and go to `http://localhost:5173` for the client and `http://localhost:5000` for the API server.
+- Open your browser and go to `http://localhost:5173` for the client and `http://localhost:5000` for the API server.
 <p align="right">(<a href="#readme">back to top</a>)</p>
 
 ## Features
